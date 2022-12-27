@@ -21,7 +21,7 @@
     .pop {
       width: 15rem;
       right: 6rem;
-      top: 13rem;
+      top: 12.5rem;
     }
     .arrow {
       width: 5rem;
@@ -32,25 +32,35 @@
     }
     .pop-mobile {
       width: 100%;
-      height: 6em;
+      height: 4em;
       bottom: 0;
       left: 0em;
+    }
+    @media only screen and (min-width: 1000px){
+      .pop-mobile {
+        height: 5em;
+      }
+    }
+    @media only screen and (min-width: 1200px){
+      .pop-mobile {
+        height: 6em;
+      }
     }
   </style> 
 </head>
 <body>
   <div id="fb-root"></div>
   <div class="container mt-5">
-    <div class="card shadow-lg overflow-hidden mb-5 m-md-5 m-xxl-0">
+    <div class="card shadow-lg overflow-hidden mb-5 m-xxl-0">
       <div class="row">
         <img src="./images/drawers.jpg" alt="drawer image" class="col-12 col-xxl-4">
-        <div class="col-12 px-5 pt-5 pb-3 col-xxl-7 p-xxl-4 ">
+        <div class="col-12 px-5 pt-5 pb-2 col-xxl-7 p-xxl-4 ">
           <h1>Shift the overall look and feel by adding these wonderful touches to furniture in your home</h1>
           <p>Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.</p>
           <div class="d-flex align-items-center justify-content-between align-content-center flex-row col-xxl-11">
-            <img src="./images/avatar-michelle.jpg" alt="michele image" class="col-2 col-md-1 rounded-circle img-fluid">
-            <div class="col-8 p-3">Michelle Apleton <br> 28 Jun 2020</div>
-            <i class="fa-solid fa-share bg-light rounded-circle p-3 d-visible" id="button"></i>
+            <img src="./images/avatar-michelle.jpg" alt="michele image" class="col-1 rounded-circle">
+            <div class="col-8 px-3">Michelle Apleton <br> 28 Jun 2020</div>
+            <i class="fa-solid fa-share bg-light rounded-circle p-2 d-visible" id="button"></i>
             <div class="pop position-absolute d-none d-xxl-none" id="popup">
               <div class="row bg-dark rounded text-white px-3 py-1 d-flex justify-content-center align-items-center align-content-around">
                 <div class="col-4 p-2">SHARE</div>
@@ -62,42 +72,36 @@
               </div>
             </div>
           </div>
-          <div class="pop-mobile d-none d-xxl-none position-absolute bg-dark d-flex flex-row justify-content-between px-5 align-items-center align-content-between" id="popup-mobile">
-            <div class="text-white">SHARE</div>
+          <div class="pop-mobile d-none d-xxl-none position-absolute bg-dark d-flex flex-row justify-content-start px-5 align-items-center align-content-between" id="popup-mobile">
+            <div class="text-white p-2">SHARE</div>
             <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
               <a class="a2a_button_facebook"></a>
               <a class="a2a_button_twitter"></a>
               <a class="a2a_button_pinterest"></a>
             </div>
-            <i class="fa-solid fa-share bg-light rounded-circle p-3" id="button-mobile"></i>
+            <!-- <i class="fa-solid fa-share bg-light rounded-circle p-3" id="button-mobile"></i> -->
           </div>
         </div>
       </div>
-
     </div>
-
-  </div>
-
-
-  
+  </div> 
   <script>
     let clickCounter = 0
     let button = document.getElementById("button")
     let popup = document.getElementById("popup")
     let popupMobile = document.getElementById("popup-mobile")
-      button.addEventListener('click', () => {
+    button.addEventListener('click', () => {
       popup.classList.remove("d-xxl-none")
       popup.classList.add("d-xxl-block")
       popupMobile.classList.remove("d-none")
+      button.style.zIndex = "1"
+
       clickCounter++
       if (clickCounter % 2 == 0){
-        popup.classList.remove("d-xxl-block")
         popup.classList.add("d-xxl-none")
+        popupMobile.classList.add("d-none")
       }
     })
-    
-   
-
   </script>
   <script async src="https://static.addtoany.com/menu/page.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
