@@ -29,7 +29,7 @@ Users should be able to:
 ![](./images/Screenshot-desktop2.png)
 ![](./images/Screenshot-mobile1.png)
 ![](./images/Screenshot-mobile2.png)
-7888
+
 ### Links
 
 - [Live Site URL](https://teobidzishvili.github.io/article-preview-component/)
